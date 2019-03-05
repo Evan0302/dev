@@ -12,7 +12,7 @@ pipeline{
 		   steps{
 			   script{
 				 
-				   model_test = load env.WORKSPACE + "/pipeline/module/pipeline-demo-module.groovy"
+				   model_test = load env.WORKSPACE + "/pipeline/module/pipeline_demo_module.groovy"
 			   }
 		   }
 	   }
