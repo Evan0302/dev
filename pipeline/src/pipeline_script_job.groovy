@@ -18,6 +18,7 @@ pipeline{
 			steps{
 				script{
 					log_files = model_test.find_files('**/*.log')
+					println log_files
 				}
 			}
 		}
