@@ -85,7 +85,6 @@ pipeline{
 		   }
 	   }
 	  
-	   stages{
 		   stage("fileExists") {
 			   steps{
 				   script {
@@ -98,7 +97,6 @@ pipeline{
 				   }
 			   }
 		   }
-	   }
    }
 }
 
