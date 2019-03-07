@@ -26,7 +26,7 @@ pipeline{
 			   }
 		   }
 	   }
-	   
+	   /* 写入json文件
 	   stage("write json") {
 		   steps{
 			   script{
@@ -37,6 +37,17 @@ pipeline{
 				   json_string = '{"NAME":"Anthony","AGE":18,"CITY":"Beijing","GENDER":"male"}'
 				   tojson_file = env.WORKSPACE + "/testdata/new_json1.json"
 				   model_test.write_json_to_file(json_string,tojson_file)
+			   }
+		   }
+	   }*/
+	   
+	   //读取properties格式文件，适合java项目
+	   stage("read properties") {
+		   steps{
+			   script{
+				   properties_file = env.WORKSPACE + "/testdata/test.properties"
+				   model_test.read_properties(properties_file)
+				   println "================================"
 			   }
 		   }
 	   }
