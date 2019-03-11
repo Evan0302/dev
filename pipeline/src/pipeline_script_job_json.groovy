@@ -86,6 +86,7 @@ pipeline{
 	   }
 	  
 	   //  构建报异常了	
+	   /*
 	   stage("fileExists") {
 		   steps{
 			   script{
@@ -97,7 +98,7 @@ pipeline{
 				   }
 			   }
 		   }
-	   }
+	   }*/
    }
 }
 
