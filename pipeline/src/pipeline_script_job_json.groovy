@@ -88,8 +88,8 @@ pipeline{
 	   stage("fileExists") {
 		   steps{
 			   script{
-				   json_file = env.WORKSPACE + "/testdata/test_json.json"
-				   if(fileExists(json_file) == true) {
+				   json_file1 = env.WORKSPACE + "/testdata/test_json.json"
+				   if(fileExists(json_file1) == true) {
 					   echo("json file is exists")
 				   }else {
 					   error("here haven't find json file")
