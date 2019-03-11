@@ -85,11 +85,12 @@ pipeline{
 		   }
 	   }
 	  
+	   //  构建报异常了	
 	   stage("fileExists") {
 		   steps{
 			   script{
-				   json_file1 = env.WORKSPACE + "/testdata/test_json.json"
-				   if(fileExists(json_file1) == true) {
+				   log_file = env.WORKSPACE + "/testdata/c.log"
+				   if(fileExists(log_file) == true) {
 					   echo("json file is exists")
 				   }else {
 					   error("here haven't find json file")
