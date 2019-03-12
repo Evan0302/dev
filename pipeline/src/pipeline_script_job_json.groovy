@@ -69,6 +69,7 @@ pipeline{
 		   }
 	   }
 	   
+	   /*
 	   stage("write into yaml file") {
 		   steps{
 			   script{
@@ -83,7 +84,7 @@ pipeline{
 				   model_test.read_yaml_file(yaml_file)
 			   }
 		   }
-	   }
+	   }*/
 	  
 	   //  构建报异常了	
 	   
