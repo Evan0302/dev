@@ -86,7 +86,7 @@ pipeline{
 	   }
 	  
 	   //  构建报异常了	
-	   /*
+	   
 	   stage("fileExists") {
 		   steps{
 			   script{
@@ -98,18 +98,21 @@ pipeline{
 				   }
 			   }
 		   }
-	   }*/
+	   }
 	   
 
-		   stage("send mail test") {
-			   steps{
-				   script {
-					   mail to: '944672405@qq.com',
-					   subject: "Running Pipeline: ${currentBuild.fullDisplayName}",
-					   body: "Something is wrong with ${env.BUILD_URL}"
-				   }
+	   stage("send mail test") {
+		   steps{
+			   script {
+				   mail to: '944672405@qq.com',
+				   cc: '944672405@qq.com',
+				   charset:'UTF-8', // or GBK/GB18030
+				   mimeType:'text/plain', // or text/html
+				   subject: "Running Pipeline: ${currentBuild.fullDisplayName}",
+				   body: "Something is wrong with ${env.BUILD_URL}, just for test send mail via pipeline code"
 			   }
 		   }
+	   }
    }
 }
 
