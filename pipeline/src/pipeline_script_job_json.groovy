@@ -115,29 +115,6 @@ pipeline{
 		   }
 	   }
 	   
-	   
-   }
-
-	   stage("init") {
-		   steps{
-			   script {
-				   module_test0 = load env.WORKSPACE + "/pipeline/module/pipeline_demo_module_json.groovy"
-				   println "1 + 1 = 2"
-			   }
-		   }
-	   }
-	}
-   post{
-	   failure {
-		   script {
-			   module_test0.send_email_results("Failed","Master","944672405@qq.com,944672405@qq.com")
-		   }
-	   }
-	   success {
-		   script {
-			   module_test0.send_email_results("Success","Master","944672405@qq.com")
-		   }
-	   }
    }
 
 }
