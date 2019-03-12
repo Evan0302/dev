@@ -117,9 +117,7 @@ pipeline{
 	   
 	   
    }
-   
-   
-   stages{
+
 	   stage("init") {
 		   steps{
 			   script {
@@ -128,7 +126,7 @@ pipeline{
 			   }
 		   }
 	   }
-   }
+	}
    post{
 	   failure {
 		   script {
