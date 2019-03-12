@@ -2,28 +2,30 @@ import hudson.model.*;
  
 println env.JOB_NAME
 println env.BUILD_NUMBER
-println env.WORKSPACE
  
 pipeline{
+	
 	agent any
 	stages{
 		stage("init") {
 			steps{
-				script{
-					model_test = load env.WORKSPACE + "/pipeline/module/pipeline_demo_module.groovy"
-					
-				}
-			}
-		}
-		stage("Test Method") {
-			steps{
-				script{
-					log_files = model_test.find_files('**/*.log')
-					
+				script {
+					module_test = load env.WORKSPACE + "/pipeline/module/pipeline_demo_module.groovy"
+					println "1 + 1 = 2"
 				}
 			}
 		}
 	}
+	post{
+	    failure {
+	        script {
+	            module_test.send_email_results("Failed","Master","944672405@qq.com,dypfan@163.com")
+	        }
+	    }
+	    success {
+	        script {
+	            module_test.send_email_results("Success","Master","944672405@qq.com")
+	        }
+	    }
+	}
 }
- 
- 
