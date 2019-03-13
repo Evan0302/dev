@@ -138,7 +138,7 @@ pipeline{
 		   steps{
 			   script {
 				   timeout(1) {
-					   activate('java -version')
+					   println "hello"
 					   sleep 61
 				   }
 			   }
