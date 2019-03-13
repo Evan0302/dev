@@ -69,7 +69,7 @@ pipeline{
 		   }
 	   }
 	   
-	   /*
+	   /*构建报异常了	
 	   stage("write into yaml file") {
 		   steps{
 			   script{
@@ -86,7 +86,7 @@ pipeline{
 		   }
 	   }*/
 	  
-	   //  构建报异常了	
+	   //  
 	   
 	   stage("fileExists") {
 		   steps{
@@ -111,6 +111,24 @@ pipeline{
 				   mimeType:'text/plain', // or text/html
 				   subject: "Running Pipeline: ${currentBuild.fullDisplayName}",
 				   body: "Something is wrong with ${env.BUILD_URL}, just for test send mail via pipeline code"
+			   }
+		   }
+	   }
+	   
+	   stage("retry and sleep") {
+		   steps{
+			   script{
+			   
+				   try {
+					   retry(3) {
+						   println "here we are test retry fuction"
+						   sleep 5
+						   println 10/0
+						   
+					   }
+				   }catch (Exception e) {
+					   println e
+				   }
 			   }
 		   }
 	   }
