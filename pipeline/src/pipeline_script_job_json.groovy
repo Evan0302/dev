@@ -134,6 +134,18 @@ pipeline{
 		   }
 	   }
 	   
+	   stage("init") {
+		   steps{
+			   script {
+				   timeout(1) {
+					   activate('java -version')
+					   sleep 61
+				   }
+			   }
+		   }
+	   }
+
+	   
    }
 
 }
