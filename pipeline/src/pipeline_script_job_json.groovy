@@ -139,7 +139,7 @@ pipeline{
 			   script {
 				   timeout(1) {
 					   activate('java -version')
-					   //sleep 61
+					   sleep 61
 				   }
 			   }
 		   }
