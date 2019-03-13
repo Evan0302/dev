@@ -52,6 +52,7 @@ pipeline{
 		   }
 	   }
 	   
+	   //读取文件，还有个方法是：file_contents = readFile json_file
 	   stage("read yaml file") {
 		   steps{
 			   script{
@@ -69,7 +70,7 @@ pipeline{
 		   }
 	   }
 	   
-	   /*构建报异常了	
+	   /*构建报异常了  写入文件	
 	   stage("write into yaml file") {
 		   steps{
 			   script{
@@ -86,8 +87,7 @@ pipeline{
 		   }
 	   }*/
 	  
-	   //  
-	   
+	   //判断文件是否存在 fileExists 用法 
 	   stage("fileExists") {
 		   steps{
 			   script{
@@ -101,7 +101,7 @@ pipeline{
 		   }
 	   }
 	   
-
+	   //发送邮件用法
 	   stage("send mail test") {
 		   steps{
 			   script {
@@ -115,6 +115,7 @@ pipeline{
 		   }
 	   }
 	   
+	   //retry 和 sleep的用法
 	   stage("retry and sleep") {
 		   steps{
 			   script{
